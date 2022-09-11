@@ -1,0 +1,111 @@
+documentatie die belangrijk is
+
+api querys
+
+https://laravel.com/docs/9.x/queries
+
+routes
+
+https://laravel.com/docs/9.x/routing
+
+instalaties
+
+https://nodejs.dev/en/download/
+
+https://getcomposer.org/download/
+
+
+
+instructie
+
+0. setup
+
+je gebt je laravel base template van git gehaald
+
+gebruik nu deze commands:
+
+- npm install
+
+    om alle npm packages te instaleren
+
+- php artisan serve
+
+    om te testen of het draait
+
+    belangrijk!!!
+
+    run alle commands in je project folder
+
+1. maak een migratie
+
+    gebruik de command: php artisan make:migration migrationnaam
+
+    gebruik inplaats van migration naam de naam van de table die je wilt aanmaken
+
+    vul deze daarna in
+
+2. migrate
+
+    gebruik de command: php artisan migrate
+
+    oeps het werkt niet?
+
+    1. gebruik command: php artisan migrate:fresh
+
+    2. check op dubble tables kijk goed naar de //Schema::create('table naam'
+
+    als deze als bestaat dan wordt de table niet aan gemaakt
+
+    3. check sws op errors en syntax fouten bijv: open haakjes ; of spel fouten
+
+    4. maak je database opniew aan en probeer het weer
+
+3. maak een model
+
+    gebruik de command: php artisan make:model modelnaam
+
+    plaats op de plek van modelnaam de een vouds form van je table
+
+    je model bevind zich: JouProject\app\Models
+
+    bijvoorbeeld:
+
+    een table users gebruikt model users
+
+    een table items gebruikt model item
+
+    de model moet alle fullbare informatie bevatten zo wil je een user id van de frontend mee sturen maar een timestamp wordt in de controller aangemaakt.
+
+4. maak een controller
+
+    gebruik de command: php artisan make:controller Controllernaam
+
+    je controller bevind zich: JouProject\app\Http\Controllers
+
+    TIP niet vergeten!!!!!!!!
+
+    altijd de model die de controllerbestuurd impoteren met de use functie
+
+    bijvoorbeeld:
+
+    use App\Models\player;
+
+5. maak een route group aan
+
+    ga naar: JouProject\routes\api.php
+
+    voor iedere controller moet je een group aan maken in de api routes en de juiste controller impoteren met use
+
+    voorbeeld:
+
+    Use App\Http\Controllers\NameController;
+
+    Route::controller(NameController::class)->group(function(){
+        Route::get('routename','de naam van de functie die je wilt uitvoeren');
+        Route::get('routename/{id}','show');
+        Route::delete('routename/{id}','delete');
+        Route::put('routename/{id}','update');
+        Route::post('routename','store');
+    });
+6. test de route
+
