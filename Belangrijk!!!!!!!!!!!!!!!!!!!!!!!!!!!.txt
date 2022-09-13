@@ -70,11 +70,15 @@ gebruik nu deze commands:
 
     bijvoorbeeld:
 
-    een table users gebruikt model users
+    een table users gebruikt model user
 
     een table items gebruikt model item
 
-    de model moet alle fullbare informatie bevatten zo wil je een user id van de frontend mee sturen maar een timestamp wordt in de controller aangemaakt.
+    de model moet alle variable bevatten die de api invult.
+
+    bijvoorbeeld:
+
+
 
 4. maak een controller
 
