@@ -36,6 +36,8 @@ gebruik nu deze commands:
 
     run alle commands in je project folder
 
+    setup je .env file vul hier je databasenaam, username en wachtwoord
+
 1. maak een migratie
 
     gebruik de command: php artisan make:migration migrationnaam

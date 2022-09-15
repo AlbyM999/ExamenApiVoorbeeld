@@ -19,7 +19,7 @@ class Tickets extends Migration
             $table->text('description')->nullable();
             $table->string('status');
             $table->foreignId('userid');
-            $table->timestamp('updated_at')->nullable();
+            $table->timestamp('fulfilled_at');
             $table->timestamps();
         });
     }
